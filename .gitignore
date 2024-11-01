@@ -1,0 +1,22 @@
+# dependencies
+node_modules/
+
+# testing
+coverage/
+
+# artifacts
+.turbo/
+build/
+
+# misc
+.DS_Store
+*.pem
+pnpm-debug.log*
+
+# env files
+.env
+
+# apps/web specific
+/apps/web/next-env.d.ts
+/apps/web/.next/
+/apps/web/src/styles/global.css

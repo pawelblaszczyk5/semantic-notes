@@ -1,0 +1,54 @@
+{
+	"$schema": "https://turbo.build/schema.json",
+	"ui": "tui",
+	"tasks": {
+		"generate-stylesheet": {
+			"dependsOn": ["^build"]
+		},
+		"transit": {
+			"dependsOn": ["^transit"]
+		},
+		"lint": {
+			"dependsOn": ["^transit", "^build", "generate-stylesheet"]
+		},
+		"lint:fix": {
+			"dependsOn": ["^transit", "^build", "generate-stylesheet"],
+			"cache": false
+		},
+		"build": {
+			"dependsOn": ["^build", "generate-stylesheet"],
+			"outputs": ["build/**", "!build/styles.css"]
+		},
+		"typecheck": {
+			"dependsOn": ["^transit", "^build"]
+		},
+		"dev": {
+			"dependsOn": [],
+			"cache": false
+		},
+		"//#format": {
+			"dependsOn": []
+		},
+		"//#format:fix": {
+			"dependsOn": [],
+			"cache": false
+		},
+		"//#sort-package-json": {
+			"inputs": ["**/package.json"],
+			"dependsOn": []
+		},
+		"//#sort-package-json:fix": {
+			"dependsOn": [],
+			"cache": false
+		},
+		"//#spellcheck": {
+			"dependsOn": []
+		},
+		"//#commonality:check": {
+			"dependsOn": ["^build"]
+		},
+		"//#commonality:constrain": {
+			"dependsOn": []
+		}
+	}
+}

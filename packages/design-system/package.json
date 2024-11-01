@@ -1,0 +1,39 @@
+{
+	"name": "@semantic-notes/design-system",
+	"version": "0.0.1",
+	"private": true,
+	"description": "Design system package with shared components",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pawelblaszczyk5/semantic-notes",
+		"directory": "packages/design-system"
+	},
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		"./button": "./build/src/button.jsx"
+	},
+	"scripts": {
+		"build": "tsc --noCheck",
+		"dev": "pnpm run generate-stylesheet && tsc --noCheck",
+		"generate-stylesheet": "tokenami --output ./build/styles.css",
+		"lint": "eslint",
+		"lint:fix": "eslint --fix",
+		"typecheck": "sed -i '' 's/CI: false/CI: true/' .tokenami/tokenami.env.d.ts; exit_code=0; tsc --noEmit || exit_code=$?; sed -i '' 's/CI: true/CI: false/' .tokenami/tokenami.env.d.ts; exit $exit_code"
+	},
+	"dependencies": {
+		"@semantic-notes/css": "workspace:0.0.1",
+		"@tokenami/css": "catalog:",
+		"react": "catalog:",
+		"react-dom": "catalog:"
+	},
+	"devDependencies": {
+		"@semantic-notes/eslint-config": "workspace:0.0.1",
+		"@semantic-notes/typescript-config": "workspace:0.0.1",
+		"@tokenami/dev": "catalog:",
+		"@tokenami/ts-plugin": "catalog:",
+		"@types/react": "catalog:",
+		"@types/react-dom": "catalog:",
+		"typescript": "catalog:"
+	}
+}

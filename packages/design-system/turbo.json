@@ -1,0 +1,12 @@
+{
+	"$schema": "https://turbo.build/schema.json",
+	"extends": ["//"],
+	"tasks": {
+		"generate-stylesheet": {
+			"outputs": ["build/styles.css"]
+		},
+		"typecheck": {
+			"outputs": ["build/*.tsbuildinfo"]
+		}
+	}
+}

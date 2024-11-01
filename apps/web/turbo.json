@@ -1,0 +1,18 @@
+{
+	"$schema": "https://turbo.build/schema.json",
+	"extends": ["//"],
+	"tasks": {
+		"generate-stylesheet": {
+			"outputs": ["src/styles/global.css"]
+		},
+		"dev": {
+			"persistent": true
+		},
+		"build": {
+			"outputs": [".next/**", "!.next/cache/**"]
+		},
+		"typecheck": {
+			"outputs": ["node_modules/.cache/tsbuildinfo/"]
+		}
+	}
+}

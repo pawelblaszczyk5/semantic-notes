@@ -1,0 +1,1 @@
+# @semantic-notes/typescript-config

@@ -1,0 +1,28 @@
+diff --git a/dist/index.cjs b/dist/index.cjs
+index c79e87cf2100bd16d1f912a058d2de9bcf82c5d2..e126fdb3d3863ebfaedeaab6bd72388002d07e05 100644
+--- a/dist/index.cjs
++++ b/dist/index.cjs
+@@ -313,9 +313,6 @@ var src_default = config.createConfig({
+     "::-webkit-inner-spin-button, ::-webkit-outer-spin-button": {
+       height: "auto"
+     },
+-    "::webkit-search-decoration": {
+-      WebkitAppearance: "none"
+-    },
+     summary: {
+       display: "list-item"
+     },
+diff --git a/dist/index.js b/dist/index.js
+index cbc1ae4ef29d3998ce4f8270e5dfc7dae6ade898..1de589b31c0c673231d8f1f1af88a00c226db425 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -311,9 +311,6 @@ var src_default = createConfig({
+     "::-webkit-inner-spin-button, ::-webkit-outer-spin-button": {
+       height: "auto"
+     },
+-    "::webkit-search-decoration": {
+-      WebkitAppearance: "none"
+-    },
+     summary: {
+       display: "list-item"
+     },

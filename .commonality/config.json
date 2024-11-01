@@ -1,0 +1,21 @@
+{
+	"$schema": "https://commonality.co/config.json",
+	"checks": {
+		"*": [
+			"recommended/has-readme",
+			"recommended/has-codeowner",
+			"recommended/valid-package-name",
+			"recommended/unique-dependency-types",
+			"recommended/matching-dev-peer-versions",
+			"recommended/extends-repository-field",
+			"@semantic-notes/commonality/has-description-field",
+			"@semantic-notes/commonality/use-catalog-protocol",
+			"@semantic-notes/commonality/use-exact-workspace-version"
+		]
+	},
+	"constraints": {
+		"*": {
+			"disallow": ["application"]
+		}
+	}
+}

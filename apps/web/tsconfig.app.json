@@ -1,0 +1,17 @@
+{
+	"extends": "@semantic-notes/typescript-config/dom-no-build",
+	"compilerOptions": {
+		"jsx": "preserve",
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"types": ["node"],
+		"plugins": [{ "name": "next" }, { "name": "@tokenami/ts-plugin" }]
+	},
+	"include": [
+		".tokenami/tokenami.config.ts",
+		".tokenami/tokenami.env.d.ts",
+		"next-env.d.ts",
+		".next/types/**/*.ts",
+		"src"
+	]
+}

@@ -1,0 +1,28 @@
+{
+	"name": "@semantic-notes/invariant",
+	"version": "0.0.1",
+	"private": true,
+	"description": "Invariant utility function",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pawelblaszczyk5/semantic-notes",
+		"directory": "packages/invariant"
+	},
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": "./build/src/index.js"
+	},
+	"scripts": {
+		"build": "tsc --noCheck",
+		"dev": "tsc --noCheck",
+		"lint": "eslint",
+		"lint:fix": "eslint --fix",
+		"typecheck": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@semantic-notes/eslint-config": "workspace:0.0.1",
+		"@semantic-notes/typescript-config": "workspace:0.0.1",
+		"typescript": "catalog:"
+	}
+}

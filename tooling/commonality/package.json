@@ -1,0 +1,33 @@
+{
+	"name": "@semantic-notes/commonality",
+	"version": "0.0.1",
+	"private": true,
+	"description": "Commonality checks package",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pawelblaszczyk5/semantic-notes",
+		"directory": "tooling/commonality"
+	},
+	"type": "module",
+	"exports": {
+		"./has-description-field": "./build/src/has-description-field.js",
+		"./use-catalog-protocol": "./build/src/use-catalog-protocol.js",
+		"./use-exact-workspace-version": "./build/src/use-exact-workspace-version.js"
+	},
+	"scripts": {
+		"build": "tsc --noCheck",
+		"lint": "eslint",
+		"lint:fix": "eslint --fix",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"commonality": "catalog:",
+		"commonality-checks-recommended": "catalog:"
+	},
+	"devDependencies": {
+		"@semantic-notes/eslint-config": "workspace:0.0.1",
+		"@semantic-notes/typescript-config": "workspace:0.0.1",
+		"@types/node": "catalog:",
+		"typescript": "catalog:"
+	}
+}

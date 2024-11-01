@@ -1,0 +1,4 @@
+{
+	"extends": "@semantic-notes/typescript-config/node-build",
+	"include": ["src"]
+}

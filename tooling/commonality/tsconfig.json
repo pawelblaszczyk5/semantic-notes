@@ -1,0 +1,7 @@
+{
+	"extends": "@semantic-notes/typescript-config/node-build",
+	"include": ["src"],
+	"compilerOptions": {
+		"types": ["node"]
+	}
+}

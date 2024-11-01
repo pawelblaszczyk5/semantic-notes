@@ -1,0 +1,41 @@
+{
+	"name": "@semantic-notes/web",
+	"version": "0.0.0",
+	"private": true,
+	"description": "Web application",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pawelblaszczyk5/semantic-notes",
+		"directory": "apps/web"
+	},
+	"sideEffects": false,
+	"type": "module",
+	"scripts": {
+		"build": "next build",
+		"dev": "pnpm run generate-stylesheet --watch & next dev --turbopack",
+		"generate-stylesheet": "tokenami --output ./src/styles/global.css",
+		"lint": "eslint",
+		"lint:fix": "eslint --fix",
+		"start": "next start",
+		"typecheck": "sed -i '' 's/CI: false/CI: true/' .tokenami/tokenami.env.d.ts; exit_code=0; tsc --build || exit_code=$?; sed -i '' 's/CI: true/CI: false/' .tokenami/tokenami.env.d.ts; exit $exit_code"
+	},
+	"dependencies": {
+		"@semantic-notes/css": "workspace:0.0.1",
+		"@semantic-notes/design-system": "workspace:0.0.1",
+		"@semantic-notes/invariant": "workspace:0.0.1",
+		"@tokenami/css": "catalog:",
+		"next": "catalog:",
+		"react": "catalog:",
+		"react-dom": "catalog:"
+	},
+	"devDependencies": {
+		"@semantic-notes/eslint-config": "workspace:0.0.1",
+		"@semantic-notes/typescript-config": "workspace:0.0.1",
+		"@tokenami/dev": "catalog:",
+		"@tokenami/ts-plugin": "catalog:",
+		"@types/node": "catalog:",
+		"@types/react": "catalog:",
+		"@types/react-dom": "catalog:",
+		"typescript": "catalog:"
+	}
+}

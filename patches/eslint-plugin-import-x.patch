@@ -1,0 +1,14 @@
+diff --git a/lib/rules/no-default-export.js b/lib/rules/no-default-export.js
+index 3b92f55a4d040519e34c6d8124dd246d1817645d..13a62213e18202df505bff3a9599c32e24a53c27 100644
+--- a/lib/rules/no-default-export.js
++++ b/lib/rules/no-default-export.js
+@@ -16,9 +16,6 @@ module.exports = (0, utils_1.createRule)({
+     },
+     defaultOptions: [],
+     create(context) {
+-        if (context.parserOptions.sourceType !== 'module') {
+-            return {};
+-        }
+         const { sourceCode } = context;
+         return {
+             ExportDefaultDeclaration(node) {

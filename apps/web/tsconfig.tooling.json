@@ -1,0 +1,4 @@
+{
+	"extends": "@semantic-notes/typescript-config/node-no-build",
+	"include": ["next.config.ts"]
+}
