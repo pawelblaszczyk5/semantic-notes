@@ -47,7 +47,7 @@
 		"eslint-plugin-promise": "^7.1.0",
 		"eslint-plugin-react-compiler": "19.0.0-beta-8a03594-20241020",
 		"eslint-plugin-react-dom": "^1.15.2",
-		"eslint-plugin-react-hooks": "^5.0.0",
+		"eslint-plugin-react-hooks": "0.0.0-experimental-603e6108-20241029",
 		"eslint-plugin-react-hooks-extra": "^1.15.2",
 		"eslint-plugin-react-naming-convention": "^1.15.2",
 		"eslint-plugin-react-refresh": "^0.4.14",
