@@ -36,6 +36,7 @@
 		"@types/node": "catalog:",
 		"@types/react": "catalog:",
 		"@types/react-dom": "catalog:",
+		"babel-plugin-react-compiler": "0.0.0-experimental-63b359f-20241029",
 		"typescript": "catalog:"
 	}
 }

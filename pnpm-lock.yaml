@@ -109,7 +109,7 @@ importers:
         version: 0.0.69(@tokenami/dev@0.0.69(typescript@5.6.3))(typescript@5.6.3)
       next:
         specifier: 'catalog:'
-        version: 15.0.3-canary.3(patch_hash=pvpxqvsvkxl5dehswcxp4p343u)(react-dom@0.0.0-experimental-603e6108-20241029(react@0.0.0-experimental-603e6108-20241029))(react@0.0.0-experimental-603e6108-20241029)
+        version: 15.0.3-canary.3(patch_hash=pvpxqvsvkxl5dehswcxp4p343u)(babel-plugin-react-compiler@0.0.0-experimental-63b359f-20241029)(react-dom@0.0.0-experimental-603e6108-20241029(react@0.0.0-experimental-603e6108-20241029))(react@0.0.0-experimental-603e6108-20241029)
       react:
         specifier: 0.0.0-experimental-603e6108-20241029
         version: 0.0.0-experimental-603e6108-20241029
@@ -138,6 +138,9 @@ importers:
       '@types/react-dom':
         specifier: npm:types-react-dom@19.0.0-rc.1
         version: types-react-dom@19.0.0-rc.1
+      babel-plugin-react-compiler:
+        specifier: 0.0.0-experimental-63b359f-20241029
+        version: 0.0.0-experimental-63b359f-20241029
       typescript:
         specifier: 'catalog:'
         version: 5.6.3
@@ -429,10 +432,6 @@ packages:
     resolution: {integrity: sha512-oy5V7pD+UvfkEATUKvIjvIAH/xCzfsFVw7ygW2SI6NClZzquT+mwdTfgfdbUiceh6iQO0CHtCPsyze/MZ2YbAA==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/helper-string-parser@7.25.7':
-    resolution: {integrity: sha512-CbkjYdsJNHFk8uqpEkpCvRs3YRp9tY6FmFY7wLMSYuGYkrdUi7r2lc4/wqsvlHoMznX3WJ9IP8giGPq68T/Y6g==}
-    engines: {node: '>=6.9.0'}
-
   '@babel/helper-string-parser@7.25.9':
     resolution: {integrity: sha512-4A/SCr/2KLd5jrtOMFzaKjVtAei3+2r/NChoBNoZ3EyP/+GlhoaEGoWOZUmFmoITP7zOJyHIMm+DYRd8o3PvHA==}
     engines: {node: '>=6.9.0'}
@@ -517,10 +516,6 @@ packages:
 
   '@babel/traverse@7.25.9':
     resolution: {integrity: sha512-ZCuvfwOwlz/bawvAuvcj8rrithP2/N55Tzz342AkTvq4qaWbGfmCk/tKhNaV2cthijKrPAA8SRJV5WWe7IBMJw==}
-    engines: {node: '>=6.9.0'}
-
-  '@babel/types@7.25.7':
-    resolution: {integrity: sha512-vwIVdXG+j+FOpkwqHRcBgHLYNL7XMkufrlaFvL9o6Ai9sJn9+PdyIL5qa0XzTZw084c+u9LOls53eoZWP/W5WQ==}
     engines: {node: '>=6.9.0'}
 
   '@babel/types@7.25.9':
@@ -1649,6 +1644,9 @@ packages:
   axobject-query@4.1.0:
     resolution: {integrity: sha512-qIj0G9wZbMGNLjLmg1PT6v2mE9AH2zlnADJD/2tC6E00hgmhUOfEB6greHPAfLRSufHqROIUTkw6E+M3lH0PTQ==}
     engines: {node: '>= 0.4'}
+
+  babel-plugin-react-compiler@0.0.0-experimental-63b359f-20241029:
+    resolution: {integrity: sha512-2H6FBK/wgaM4cPjWAyXU9tGKapI5rwFA6EthhZlpRp/VnrKD+yHhoGh1oQcywWD8HFcTwc+J1ymGZmslBb1jVA==}
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -4156,10 +4154,6 @@ packages:
     resolution: {integrity: sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==}
     engines: {node: '>=0.6.0'}
 
-  to-fast-properties@2.0.0:
-    resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
-    engines: {node: '>=4'}
-
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
@@ -4548,7 +4542,7 @@ snapshots:
       '@babel/parser': 7.25.6
       '@babel/template': 7.25.0
       '@babel/traverse': 7.25.6
-      '@babel/types': 7.25.7
+      '@babel/types': 7.25.9
       convert-source-map: 2.0.0
       debug: 4.3.6
       gensync: 1.0.0-beta.2
@@ -4559,7 +4553,7 @@ snapshots:
 
   '@babel/generator@7.25.7':
     dependencies:
-      '@babel/types': 7.25.7
+      '@babel/types': 7.25.9
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
       jsesc: 3.0.2
@@ -4658,8 +4652,6 @@ snapshots:
     dependencies:
       '@babel/types': 7.25.9
 
-  '@babel/helper-string-parser@7.25.7': {}
-
   '@babel/helper-string-parser@7.25.9': {}
 
   '@babel/helper-validator-identifier@7.24.7': {}
@@ -4702,7 +4694,7 @@ snapshots:
 
   '@babel/parser@7.25.7':
     dependencies:
-      '@babel/types': 7.25.7
+      '@babel/types': 7.25.9
 
   '@babel/parser@7.25.9':
     dependencies:
@@ -4757,7 +4749,7 @@ snapshots:
       '@babel/generator': 7.25.7
       '@babel/parser': 7.25.7
       '@babel/template': 7.25.7
-      '@babel/types': 7.25.7
+      '@babel/types': 7.25.9
       debug: 4.3.7
       globals: 11.12.0
     transitivePeerDependencies:
@@ -4774,12 +4766,6 @@ snapshots:
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
-
-  '@babel/types@7.25.7':
-    dependencies:
-      '@babel/helper-string-parser': 7.25.7
-      '@babel/helper-validator-identifier': 7.25.7
-      to-fast-properties: 2.0.0
 
   '@babel/types@7.25.9':
     dependencies:
@@ -5909,6 +5895,10 @@ snapshots:
       - debug
 
   axobject-query@4.1.0: {}
+
+  babel-plugin-react-compiler@0.0.0-experimental-63b359f-20241029:
+    dependencies:
+      '@babel/types': 7.25.9
 
   balanced-match@1.0.2: {}
 
@@ -8129,7 +8119,7 @@ snapshots:
       - '@babel/core'
       - babel-plugin-macros
 
-  next@15.0.3-canary.3(patch_hash=pvpxqvsvkxl5dehswcxp4p343u)(react-dom@0.0.0-experimental-603e6108-20241029(react@0.0.0-experimental-603e6108-20241029))(react@0.0.0-experimental-603e6108-20241029):
+  next@15.0.3-canary.3(patch_hash=pvpxqvsvkxl5dehswcxp4p343u)(babel-plugin-react-compiler@0.0.0-experimental-63b359f-20241029)(react-dom@0.0.0-experimental-603e6108-20241029(react@0.0.0-experimental-603e6108-20241029))(react@0.0.0-experimental-603e6108-20241029):
     dependencies:
       '@next/env': 15.0.3-canary.3
       '@swc/counter': 0.1.3
@@ -8149,6 +8139,7 @@ snapshots:
       '@next/swc-linux-x64-musl': 15.0.3-canary.3
       '@next/swc-win32-arm64-msvc': 15.0.3-canary.3
       '@next/swc-win32-x64-msvc': 15.0.3-canary.3
+      babel-plugin-react-compiler: 0.0.0-experimental-63b359f-20241029
       sharp: 0.33.5
     transitivePeerDependencies:
       - '@babel/core'
@@ -8888,8 +8879,6 @@ snapshots:
   tmp@0.0.33:
     dependencies:
       os-tmpdir: 1.0.2
-
-  to-fast-properties@2.0.0: {}
 
   to-regex-range@5.0.1:
     dependencies:
