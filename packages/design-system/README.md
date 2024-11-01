@@ -1,1 +1,0 @@
-# @semantic-notes/design-system

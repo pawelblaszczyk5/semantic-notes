@@ -1,8 +1,0 @@
-{
-	"extends": "@semantic-notes/typescript-config/dom-build",
-	"compilerOptions": {
-		"plugins": [{ "name": "@tokenami/ts-plugin" }],
-		"jsx": "preserve"
-	},
-	"include": ["src", ".tokenami/tokenami.config.ts", ".tokenami/tokenami.env.d.ts"]
-}

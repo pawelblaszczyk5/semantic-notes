@@ -21,7 +21,6 @@
 	},
 	"dependencies": {
 		"@semantic-notes/css": "workspace:0.0.1",
-		"@semantic-notes/design-system": "workspace:0.0.1",
 		"@semantic-notes/invariant": "workspace:0.0.1",
 		"@tokenami/css": "catalog:",
 		"next": "catalog:",
