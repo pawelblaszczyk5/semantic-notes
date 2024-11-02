@@ -4,8 +4,17 @@
 	"ignorePaths": ["pnpm-lock.yaml", "**.svg", ".git/", ".gitignore", ".vscode/", "./patches/"],
 	"dictionaries": ["lorem-ipsum"],
 	"useGitignore": true,
-	"words": ["codeowner", "commonality", "pawelblaszczyk", "stylesheet", "tokenami", "turbopack", "typecheck"],
+	"words": [
+		"codeowner",
+		"commonality",
+		"pawelblaszczyk",
+		"pgvector",
+		"stylesheet",
+		"tokenami",
+		"turbopack",
+		"typecheck"
+	],
 	"enableGlobDot": true,
-	"enableFiletypes": ["dockerfile", "github-actions-workflow"],
+	"enableFiletypes": ["dockercompose", "dockerfile", "github-actions-workflow"],
 	"ignoreWords": ["commonalityco", "isbot", "jsxdev", "nuqs", "pipeable", "replicache", "taze", "tseslint", "xyflow"]
 }
