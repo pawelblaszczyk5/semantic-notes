@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 
 import localFont from "next/font/local";
 
-import { Reset } from "../lib/restyle";
+import { Reset, Theme } from "../lib/restyle";
 
 const geistSans = localFont({
 	src: "../fonts/GeistVF.woff",
@@ -31,6 +31,7 @@ const MainLayout = ({
 		<html className={`${geistSans.variable} ${geistMono.variable}`} lang="en">
 			<head>
 				<Reset />
+				<Theme />
 			</head>
 			<body
 				css={{
