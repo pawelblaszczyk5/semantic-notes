@@ -9,17 +9,17 @@ interface ThemedProperties {
 	fontFamily?: "var(--font-family-mono)" | "var(--font-family-sans)" | undefined;
 }
 
-interface CSSPropertiesWithoutThemed extends Omit<CSSProperties, keyof ThemedProperties> {}
+interface CssPropertiesWithoutThemed extends Omit<CSSProperties, keyof ThemedProperties> {}
 
-interface AllCSSProperties extends ThemedProperties, CSSPropertiesWithoutThemed {}
+interface AllCssProperties extends ThemedProperties, CssPropertiesWithoutThemed {}
 
-interface CSSObject extends AllCSSProperties {
-	[Key: string]: AllCSSProperties | CSSObject | number | string | undefined;
+interface CssObject extends AllCssProperties {
+	[Key: string]: AllCssProperties | CssObject | number | string | undefined;
 }
 
 declare module "restyle" {
 	interface Register {
-		cssObject: CSSObject;
+		cssObject: CssObject;
 	}
 }
 
