@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
-const nextConfig = {
+const nextConfig: NextConfig = {
+	devIndicators: {
+		appIsrStatus: false,
+	},
 	eslint: {
 		ignoreDuringBuilds: true,
 	},
@@ -12,9 +15,8 @@ const nextConfig = {
 		taint: true,
 	},
 	typescript: {
-		ignoreBuildErrors: true,
 		tsconfigPath: "./tsconfig.app.json",
 	},
-} satisfies NextConfig;
+};
 
 export default nextConfig;
