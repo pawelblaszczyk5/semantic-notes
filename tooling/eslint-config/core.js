@@ -339,8 +339,9 @@ export default tseslint.config(
 				{
 					allowList: {
 						ctx: true,
-						src: true,
+						dev: true,
 						env: true,
+						src: true,
 					},
 					checkProperties: true,
 					checkShorthandProperties: true,
