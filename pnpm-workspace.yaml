@@ -8,10 +8,6 @@ catalog:
   "@remix-run/node": ^2.13.1
   "@remix-run/react": ^2.13.1
   "@remix-run/serve": ^2.13.1
-  "@tokenami/css": ^0.0.69
-  "@tokenami/dev": ^0.0.69
-  "@tokenami/ds": ^0.0.69
-  "@tokenami/ts-plugin": ^0.0.69
   "@types/node": ^22.8.6
   commonality: ^0.2.63
   commonality-checks-recommended: ^0.0.40

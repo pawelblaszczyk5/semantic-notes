@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 
 import localFont from "next/font/local";
 
-import "../styles/global.css";
+import { Reset } from "../lib/restyle";
 
 const geistSans = localFont({
 	src: "../fonts/GeistVF.woff",
@@ -29,7 +29,16 @@ const MainLayout = ({
 }>) => {
 	return (
 		<html className={`${geistSans.variable} ${geistMono.variable}`} lang="en">
-			<body>{children}</body>
+			<head>
+				<Reset />
+			</head>
+			<body
+				css={{
+					padding: 16,
+				}}
+			>
+				{children}
+			</body>
 		</html>
 	);
 };

@@ -65,9 +65,9 @@
 		},
 		"patchedDependencies": {
 			"@commonalityco/studio": "patches/@commonalityco__studio.patch",
-			"@tokenami/ds": "patches/@tokenami__ds.patch",
 			"eslint-plugin-import-x": "patches/eslint-plugin-import-x.patch",
-			"next@15.0.3-canary.3": "patches/next.patch"
+			"next@15.0.3-canary.3": "patches/next.patch",
+			"restyle": "patches/restyle.patch"
 		}
 	}
 }

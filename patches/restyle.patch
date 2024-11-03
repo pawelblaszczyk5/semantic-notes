@@ -1,0 +1,44 @@
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+index 8d411f9d1b5c825304145b6f6d3806c79c045dae..62b5a999fbded568e9bd25f16cbfce07bcaaaa20 100644
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -3,4 +3,4 @@ export { GlobalStyles } from './global-styles';
+ export { keyframes } from './keyframes';
+ export { media } from './media';
+ export { styled } from './styled';
+-export type { CSSObject, CSSValue } from './types';
++export type { CSSObject, CSSValue, Register } from './types';
+diff --git a/dist/types.d.ts b/dist/types.d.ts
+index 190e4705d0437faf3ed6ca2bd0c9dcdad7396774..8e84b6b49ecac29b9645a941158871f3440a71ae 100644
+--- a/dist/types.d.ts
++++ b/dist/types.d.ts
+@@ -1,13 +1,18 @@
++export interface Register {
++}
++
+ export type CustomProperties = {
+     [key in `--${string}`]?: string | number;
+ };
+-export type CSSObject = React.CSSProperties & {
++export type CSSObject = Register extends {
++    cssObject: infer TCssObject
++}? TCssObject  :React.CSSProperties & {
+     [Key: string]: React.CSSProperties | CSSObject | string | number | undefined;
+ };
+ export type CSSValue = CSSObject[keyof CSSObject];
+ export type CSSRule = [className: string, rule?: string];
+ type ClassNameMessage = 'Component must accept a className prop';
+-export type AcceptsClassName<T> = T extends keyof JSX.IntrinsicElements ? 'className' extends keyof JSX.IntrinsicElements[T] ? T : ClassNameMessage : T extends React.ComponentType<infer P> ? 'className' extends keyof P ? T : ClassNameMessage : ClassNameMessage;
++export type AcceptsClassName<T> = T extends keyof React.JSX.IntrinsicElements ? 'className' extends keyof React.JSX.IntrinsicElements[T] ? T : ClassNameMessage : T extends React.ComponentType<infer P> ? 'className' extends keyof P ? T : ClassNameMessage : ClassNameMessage;
+ export declare namespace RestyleJSX {
+     type Element = React.JSX.Element;
+     type ElementType = React.JSX.ElementType;
+@@ -18,7 +23,7 @@ export declare namespace RestyleJSX {
+     type IntrinsicAttributes = React.JSX.IntrinsicAttributes;
+     type IntrinsicClassAttributes<T> = React.JSX.IntrinsicClassAttributes<T>;
+     type IntrinsicElements = {
+-        [K in keyof JSX.IntrinsicElements]: React.JSX.IntrinsicElements[K] & {
++        [K in keyof React.JSX.IntrinsicElements]: React.JSX.IntrinsicElements[K] & {
+             css?: CSSObject;
+         };
+     };

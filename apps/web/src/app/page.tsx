@@ -1,7 +1,7 @@
-import { css } from "@semantic-notes/css";
+import { Editor } from "../components/editor";
 
 const HomePage = () => {
-	return <h1 style={css({ "--color": "var(--color_blue12)" })}>Hello world</h1>;
+	return <Editor />;
 };
 
 export default HomePage;

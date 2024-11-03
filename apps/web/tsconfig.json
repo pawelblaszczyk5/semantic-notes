@@ -1,6 +1,8 @@
 {
 	"files": [],
-	"compilerOptions": {},
+	"compilerOptions": {
+		"jsxImportSource": "restyle"
+	},
 	"references": [
 		{
 			"path": "./tsconfig.app.json"
