@@ -4,13 +4,13 @@ import { GlobalStyles } from "restyle";
 
 export type CSSObjectPick<T extends keyof CSSProperties> =
 	| {
-			[Key: string]: CSSObjectPick<T> | Pick<CSSProperties, T> | undefined;
+			[Key: string]: CSSObjectPick<T> | undefined;
 	  }
 	| Pick<CSSProperties, T>;
 
 export type CSSObjectExcept<T extends keyof CSSProperties> =
 	| {
-			[Key: string]: CSSObjectExcept<T> | Omit<CSSProperties, T> | undefined;
+			[Key: string]: CSSObjectExcept<T> | undefined;
 	  }
 	| Omit<CSSProperties, T>;
 
