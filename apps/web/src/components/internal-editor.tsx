@@ -15,7 +15,10 @@ const extensions = [
 export const InternalEditor = () => {
 	const [className, Styles] = css({
 		"& li": {
-			marginInlineStart: 20,
+			marginInlineStart: 26,
+		},
+		"& li > p": {
+			paddingInlineStart: 0,
 		},
 		"& ol": {
 			listStyleType: "decimal",
