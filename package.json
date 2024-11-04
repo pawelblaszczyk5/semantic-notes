@@ -28,7 +28,7 @@
 		"@semantic-notes/commonality": "workspace:0.0.1",
 		"commonality": "catalog:",
 		"commonality-checks-recommended": "catalog:",
-		"cspell": "^8.15.5",
+		"cspell": "^8.15.7",
 		"prettier": "^3.3.3",
 		"sort-package-json": "^2.10.1",
 		"taze": "^0.18.0",
@@ -43,7 +43,7 @@
 	"pnpm": {
 		"peerDependencyRules": {
 			"allowedVersions": {
-				"eslint": "9.13.0"
+				"eslint": "9.14.0"
 			}
 		},
 		"allowedDeprecatedVersions": {
@@ -66,7 +66,7 @@
 		"patchedDependencies": {
 			"@commonalityco/studio": "patches/@commonalityco__studio.patch",
 			"eslint-plugin-import-x": "patches/eslint-plugin-import-x.patch",
-			"next@15.0.3-canary.3": "patches/next.patch",
+			"next@15.0.3-canary.5": "patches/next.patch",
 			"restyle": "patches/restyle.patch"
 		}
 	}
