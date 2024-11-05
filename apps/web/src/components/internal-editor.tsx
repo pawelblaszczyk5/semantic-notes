@@ -56,6 +56,7 @@ const MenubarButton = ({
 				"&[data-hovered]": {
 					background: theme.color.grass[10],
 				},
+				aspectRatio: "1/1",
 				background: theme.color.grass[9],
 				borderRadius: 4,
 				color: theme.color.olive[1],
@@ -129,6 +130,7 @@ const Menubar = () => {
 	return (
 		<Toolbar
 			css={{
+				alignItems: "center",
 				display: "flex",
 				gap: 8,
 			}}
