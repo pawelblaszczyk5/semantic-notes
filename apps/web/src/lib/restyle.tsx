@@ -109,6 +109,20 @@ export const [theme, Theme] = createTheme({
 			"11": "color(display-p3 0.38 0.395 0.374)",
 			"12": "color(display-p3 0.117 0.129 0.111)",
 		},
+		violet: {
+			"1": "color(display-p3 0.991 0.988 0.995)",
+			"2": "color(display-p3 0.978 0.974 0.998)",
+			"3": "color(display-p3 0.953 0.943 0.993)",
+			"4": "color(display-p3 0.916 0.897 1)",
+			"5": "color(display-p3 0.876 0.851 1)",
+			"6": "color(display-p3 0.825 0.793 0.981)",
+			"7": "color(display-p3 0.752 0.712 0.943)",
+			"8": "color(display-p3 0.654 0.602 0.902)",
+			"9": "color(display-p3 0.417 0.341 0.784)",
+			"10": "color(display-p3 0.381 0.306 0.741)",
+			"11": "color(display-p3 0.383 0.317 0.702)",
+			"12": "color(display-p3 0.179 0.15 0.359)",
+		},
 	},
 });
 /* eslint-enable perfectionist/sort-objects -- reenable */
