@@ -156,3 +156,42 @@ export const Redo = () => {
 		</svg>
 	);
 };
+
+export const Delete = () => {
+	return (
+		<svg height="1em" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M10 5a2 2 0 0 0-1.344.519l-6.328 5.74a1 1 0 0 0 0 1.481l6.328 5.741A2 2 0 0 0 10 19h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm2 4l6 6m0-6l-6 6"
+				fill="none"
+				stroke="currentColor"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+				strokeWidth="2"
+			/>
+		</svg>
+	);
+};
+
+export const Search = () => {
+	return (
+		<svg height="1em" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg">
+			<g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
+				<path d="M21 6H3m7 6H3m7 6H3" />
+				<circle cx="17" cy="15" r="3" />
+				<path d="m21 19l-1.9-1.9" />
+			</g>
+		</svg>
+	);
+};
+
+export const Create = () => {
+	return (
+		<svg height="1em" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg">
+			<g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
+				<path d="M15 12v6m-3-3h6" />
+				<rect height="14" rx="2" ry="2" width="14" x="8" y="8" />
+				<path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+			</g>
+		</svg>
+	);
+};

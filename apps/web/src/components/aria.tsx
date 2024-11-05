@@ -1,3 +1,5 @@
+"use client";
+
 import {
 	Button as AriaButton,
 	Group as AriaGroup,

@@ -1,7 +1,7 @@
 import { NodeContext } from "@effect/platform-node";
 import { Model, SqlSchema } from "@effect/sql";
 import { PgClient, PgMigrator } from "@effect/sql-pg";
-import { Effect, Layer, Redacted, Schema, String } from "effect";
+import { Effect, Layer, Option, Redacted, Schema, String } from "effect";
 
 import { generateEmbeddings } from "./embeddings";
 import { splitDocument } from "./html";
@@ -71,21 +71,65 @@ export const findNoteById = SqlSchema.findOne({
 });
 
 export const findAllNotes = SqlSchema.findAll({
-	execute: () => {
+	execute: (request) => {
 		return Effect.gen(function* () {
 			const sql = yield* PgClient.PgClient;
 
-			return yield* sql`
+			if (request === "") {
+				return yield* sql`
+					SELECT
+						*
+					FROM
+						${sql("note")}
+					ORDER BY
+						XMIN::TEXT::BIGINT DESC
+				`;
+			}
+
+			const embedding = yield* Effect.tryPromise(async () => {
+				return generateEmbeddings([request]);
+			}).pipe(
+				Effect.map((embeddings) => {
+					return Option.fromNullable(embeddings[0]);
+				}),
+				Effect.flatMap((option) => {
+					return option;
+				}),
+				Effect.map((embedding) => {
+					return `[${embedding.join(",")}]`;
+				}),
+			);
+
+			const result = yield* sql`
+				WITH
+					${sql("closestEmbeddings")} AS (
+						SELECT
+							${sql("noteId")},
+							MIN(
+								${sql("embedding")} <-> ${embedding}
+							) AS ${sql("minDistance")}
+						FROM
+							${sql("embedding")}
+						GROUP BY
+							${sql("noteId")}
+					)
 				SELECT
-					*
+					${sql("note")}.${sql("id")},
+					${sql("note")}.${sql("content")},
+					${sql("closestEmbeddings")}.${sql("minDistance")} AS ${sql("distance")}
 				FROM
-					${sql("note")}
+					${sql("closestEmbeddings")}
+					JOIN ${sql("note")} ON ${sql("note")}.${sql("id")} = ${sql("closestEmbeddings")}.${sql("noteId")}
+				WHERE
+					${sql("closestEmbeddings")}.${sql("minDistance")} < 0.7
 				ORDER BY
-					XMIN::TEXT::BIGINT DESC
+					${sql("distance")} ASC;
 			`;
+
+			return result;
 		});
 	},
-	Request: Schema.Null,
+	Request: Schema.String,
 	Result: Note,
 });
 

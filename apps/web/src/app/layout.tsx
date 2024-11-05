@@ -41,7 +41,16 @@ const MainLayout = ({
 					padding: 16,
 				}}
 			>
-				<Suspense>{children}</Suspense>
+				<Suspense>
+					<div
+						css={{
+							margin: "0 auto",
+							maxWidth: "80ch",
+						}}
+					>
+						{children}
+					</div>
+				</Suspense>
 			</body>
 		</html>
 	);
