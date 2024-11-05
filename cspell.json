@@ -9,6 +9,8 @@
 	"enableFiletypes": ["dockercompose", "dockerfile", "github-actions-workflow"],
 	"ignoreWords": [
 		"commonalityco",
+		"dropcursor",
+		"gapcursor",
 		"isbot",
 		"jsxdev",
 		"nuqs",
