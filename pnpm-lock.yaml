@@ -46,7 +46,7 @@ patchedDependencies:
     hash: pvpxqvsvkxl5dehswcxp4p343u
     path: patches/next.patch
   restyle:
-    hash: xsqxvyuqdjeatvyqqpctfmnwk4
+    hash: k4bh3fwbte5qyhb32negvtjcfq
     path: patches/restyle.patch
 
 importers:
@@ -86,6 +86,9 @@ importers:
       '@semantic-notes/invariant':
         specifier: workspace:0.0.1
         version: link:../../packages/invariant
+      '@tiptap/extension-character-count':
+        specifier: ^2.9.1
+        version: 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)
       '@tiptap/extension-underline':
         specifier: ^2.9.1
         version: 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
@@ -112,7 +115,7 @@ importers:
         version: 0.0.0-experimental-603e6108-20241029(react@0.0.0-experimental-603e6108-20241029)
       restyle:
         specifier: ^2.4.0
-        version: 2.4.0(patch_hash=xsqxvyuqdjeatvyqqpctfmnwk4)(react@0.0.0-experimental-603e6108-20241029)
+        version: 2.4.0(patch_hash=k4bh3fwbte5qyhb32negvtjcfq)(react@0.0.0-experimental-603e6108-20241029)
     devDependencies:
       '@semantic-notes/eslint-config':
         specifier: workspace:0.0.1
@@ -1827,6 +1830,12 @@ packages:
     resolution: {integrity: sha512-0hizL/0j9PragJObjAWUVSuGhN1jKjCFnhLQVRxtx4HutcvS/lhoWMvFg6ZF8xqWgIa06n6A7MaknQkqhTdhKA==}
     peerDependencies:
       '@tiptap/core': ^2.7.0
+
+  '@tiptap/extension-character-count@2.9.1':
+    resolution: {integrity: sha512-1V4gi+jA2B0W0aB8dH9W60YitZF88R5+Ck9LsxHsaEBRxPym+s382cYl1A7mXJyvv51WzYlr72iX4S0cdl3KOw==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+      '@tiptap/pm': ^2.7.0
 
   '@tiptap/extension-code-block@2.9.1':
     resolution: {integrity: sha512-A/50wPWDqEUUUPhrwRKILP5gXMO5UlQ0F6uBRGYB9CEVOREam9yIgvONOnZVJtszHqOayjIVMXbH/JMBeq11/g==}
@@ -7052,6 +7061,11 @@ snapshots:
     dependencies:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
 
+  '@tiptap/extension-character-count@2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)':
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+      '@tiptap/pm': 2.9.1
+
   '@tiptap/extension-code-block@2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)':
     dependencies:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
@@ -10318,7 +10332,7 @@ snapshots:
       onetime: 5.1.2
       signal-exit: 3.0.7
 
-  restyle@2.4.0(patch_hash=xsqxvyuqdjeatvyqqpctfmnwk4)(react@0.0.0-experimental-603e6108-20241029):
+  restyle@2.4.0(patch_hash=k4bh3fwbte5qyhb32negvtjcfq)(react@0.0.0-experimental-603e6108-20241029):
     dependencies:
       react: 0.0.0-experimental-603e6108-20241029
 

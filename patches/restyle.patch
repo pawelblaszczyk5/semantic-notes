@@ -1,3 +1,28 @@
+diff --git a/dist/create-restyle-props.js b/dist/create-restyle-props.js
+index 1317f1544a6193602bd0634ee23b66ba984d3182..c144da811738f46965f9e2eda7c3fc7f7aab711b 100644
+--- a/dist/create-restyle-props.js
++++ b/dist/create-restyle-props.js
+@@ -18,14 +18,14 @@ export function createRestyleProps(type, props) {
+             if (props.children.constructor === Array) {
+                 props.children = props.children.concat(stylesToRender);
+             }
+-            else if (typeof props.children === 'string') {
+-                props.children = [props.children, stylesToRender];
++            else if (typeof props.children === 'object' && 'type' in props.children) {
++                props.children = [
++                  React.cloneElement(props.children, { key: 'rse' }),
++                  stylesToRender,
++                ]
+             }
+             else {
+-                props.children = [
+-                    React.cloneElement(props.children, { key: 'rse' }),
+-                    stylesToRender,
+-                ];
++                props.children = [props.children, stylesToRender]
+             }
+         }
+         else {
 diff --git a/dist/media.d.ts b/dist/media.d.ts
 index 6aee0feb6a4360db24c3af3018738077ddf5bfc9..1bb2ca697062e775f6b61ba1b75f45a3b584cbd2 100644
 --- a/dist/media.d.ts
