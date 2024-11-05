@@ -4,7 +4,7 @@ import { theme } from "./restyle";
 
 export const outsideFocusRing = {
 	outlineColor: theme.color.violet[8],
-	outlineOffset: 4,
+	outlineOffset: 3,
 	outlineWidth: 3,
 } satisfies CSSObject;
 
