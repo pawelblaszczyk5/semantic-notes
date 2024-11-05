@@ -1,6 +1,13 @@
-import { Editor } from "../components/editor";
+import { connection } from "next/server";
 
-const HomePage = () => {
+import { findAllNotes } from "../lib/database";
+import { runtime } from "../lib/effect";
+
+const HomePage = async () => {
+	await connection();
+
+	const notes = await runtime.runPromise(findAllNotes(null));
+
 	return (
 		<div
 			css={{
@@ -8,7 +15,13 @@ const HomePage = () => {
 				maxWidth: "80ch",
 			}}
 		>
-			<Editor />
+			{notes.map((note) => {
+				return (
+					<a href={`/note/${note.id.toString()}`} key={note.id}>
+						{note.content.slice(0, 10)}
+					</a>
+				);
+			})}
 		</div>
 	);
 };

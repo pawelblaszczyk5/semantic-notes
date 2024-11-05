@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 import localFont from "next/font/local";
+import { Suspense } from "react";
 
 import { Reset, theme, Theme } from "../lib/restyle";
 
@@ -40,7 +41,7 @@ const MainLayout = ({
 					padding: 16,
 				}}
 			>
-				{children}
+				<Suspense fallback={null}>{children}</Suspense>
 			</body>
 		</html>
 	);

@@ -1,0 +1,24 @@
+diff --git a/dist/dts/PgMigrator.d.ts b/dist/dts/PgMigrator.d.ts
+index 6db501387e9b0723fb4eeb9204a0f179ad9d0fc8..451b0bdbd9d9aa6d3638bcfd9350fd3bf33aa6de 100644
+--- a/dist/dts/PgMigrator.d.ts
++++ b/dist/dts/PgMigrator.d.ts
+@@ -14,7 +14,6 @@ export * from "@effect/sql/Migrator";
+ /**
+  * @since 1.0.0
+  */
+-export * from "@effect/sql/Migrator/FileSystem";
+ /**
+  * @category constructor
+  * @since 1.0.0
+diff --git a/dist/esm/PgMigrator.js b/dist/esm/PgMigrator.js
+index 00ec459aec566ed1c4500db228e942a88042cfa9..089518e1b585b8e7d535a64e1a17fd526ca8ad8f 100644
+--- a/dist/esm/PgMigrator.js
++++ b/dist/esm/PgMigrator.js
+@@ -16,7 +16,6 @@ export * from "@effect/sql/Migrator";
+ /**
+  * @since 1.0.0
+  */
+-export * from "@effect/sql/Migrator/FileSystem";
+ /**
+  * @category constructor
+  * @since 1.0.0

@@ -30,6 +30,8 @@
 		"commonality-checks-recommended": "catalog:",
 		"cspell": "^8.15.7",
 		"prettier": "^3.3.3",
+		"prettier-plugin-embed": "^0.4.15",
+		"prettier-plugin-sql": "^0.18.1",
 		"sort-package-json": "^2.10.1",
 		"taze": "^0.18.0",
 		"turbo": "2.2.4-canary.7",
@@ -67,7 +69,8 @@
 			"@commonalityco/studio": "patches/@commonalityco__studio.patch",
 			"eslint-plugin-import-x": "patches/eslint-plugin-import-x.patch",
 			"next@15.0.3-canary.5": "patches/next.patch",
-			"restyle": "patches/restyle.patch"
+			"restyle": "patches/restyle.patch",
+			"@effect/sql-pg": "patches/@effect__sql-pg.patch"
 		}
 	}
 }

@@ -356,6 +356,7 @@ export default tseslint.config(
 			"unicorn/no-array-callback-reference": "off",
 			"unicorn/no-array-method-this-argument": "off",
 			"unicorn/prefer-native-coercion-functions": "off",
+			"unicorn/no-await-expression-member": "off",
 		},
 	},
 	perfectionist.configs["recommended-natural"],
