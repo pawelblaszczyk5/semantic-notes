@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 
-import Underline from "@tiptap/extension-underline";
+import UnderlineExtension from "@tiptap/extension-underline";
 import { EditorProvider, useCurrentEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { css } from "restyle";
@@ -10,6 +10,19 @@ import { css } from "restyle";
 import { theme } from "../lib/restyle";
 import { insideFocusRing, outsideFocusRing, srOnly } from "../lib/styles";
 import { Button, Group, Separator, ToggleButton, Toolbar } from "./aria";
+import {
+	Bold,
+	Clear,
+	Heading,
+	HorizontalLine,
+	Italic,
+	OrderedList,
+	Redo,
+	Strike,
+	Underline,
+	Undo,
+	UnorderedList,
+} from "./icons";
 
 const extensions = [
 	StarterKit.configure({
@@ -23,7 +36,7 @@ const extensions = [
 			levels: [1],
 		},
 	}),
-	Underline,
+	UnderlineExtension,
 ];
 
 const MenubarButton = ({
@@ -132,7 +145,9 @@ const Menubar = () => {
 					isSelected={editor.isActive("bold")}
 				>
 					<span css={srOnly}>Toggle Bold</span>
-					<span aria-hidden>B</span>
+					<span aria-hidden>
+						<Bold />
+					</span>
 				</MenubarToggleButton>
 				<MenubarToggleButton
 					onChange={() => {
@@ -142,7 +157,9 @@ const Menubar = () => {
 					isSelected={editor.isActive("italic")}
 				>
 					<span css={srOnly}>Toggle italic</span>
-					<span aria-hidden>I</span>
+					<span aria-hidden>
+						<Italic />
+					</span>
 				</MenubarToggleButton>
 				<MenubarToggleButton
 					onChange={() => {
@@ -152,7 +169,9 @@ const Menubar = () => {
 					isSelected={editor.isActive("strike")}
 				>
 					<span css={srOnly}>Toggle strike</span>
-					<span aria-hidden>S</span>
+					<span aria-hidden>
+						<Strike />
+					</span>
 				</MenubarToggleButton>
 				<MenubarToggleButton
 					onChange={() => {
@@ -162,7 +181,9 @@ const Menubar = () => {
 					isSelected={editor.isActive("underline")}
 				>
 					<span css={srOnly}>Toggle underline</span>
-					<span aria-hidden>U</span>
+					<span aria-hidden>
+						<Underline />
+					</span>
 				</MenubarToggleButton>
 			</Group>
 			<Separator
@@ -189,7 +210,9 @@ const Menubar = () => {
 					isSelected={editor.isActive("heading", { level: 1 })}
 				>
 					<span css={srOnly}>Toggle heading</span>
-					<span aria-hidden>H1</span>
+					<span aria-hidden>
+						<Heading />
+					</span>
 				</MenubarToggleButton>
 				<MenubarToggleButton
 					onChange={() => {
@@ -199,7 +222,9 @@ const Menubar = () => {
 					isSelected={editor.isActive("orderedList")}
 				>
 					<span css={srOnly}>Toggle unordered list</span>
-					<span aria-hidden>UL</span>
+					<span aria-hidden>
+						<UnorderedList />
+					</span>
 				</MenubarToggleButton>
 				<MenubarToggleButton
 					onChange={() => {
@@ -209,7 +234,9 @@ const Menubar = () => {
 					isSelected={editor.isActive("bulletList")}
 				>
 					<span css={srOnly}>Toggle ordered list</span>
-					<span aria-hidden>OL</span>
+					<span aria-hidden>
+						<OrderedList />
+					</span>
 				</MenubarToggleButton>
 				<MenubarButton
 					onPress={() => {
@@ -218,7 +245,9 @@ const Menubar = () => {
 					disabled={!editor.can().chain().focus().setHorizontalRule().run()}
 				>
 					<span css={srOnly}>Add horizontal line</span>
-					<span aria-hidden>HR</span>
+					<span aria-hidden>
+						<HorizontalLine />
+					</span>
 				</MenubarButton>
 				<MenubarButton
 					onPress={() => {
@@ -227,7 +256,9 @@ const Menubar = () => {
 					disabled={!editor.can().chain().focus().clearNodes().unsetAllMarks().run()}
 				>
 					<span css={srOnly}>Clear formatting</span>
-					<span aria-hidden>CR</span>
+					<span aria-hidden>
+						<Clear />
+					</span>
 				</MenubarButton>
 			</Group>
 			<Separator
@@ -253,7 +284,9 @@ const Menubar = () => {
 					disabled={!editor.can().chain().focus().undo().run()}
 				>
 					<span css={srOnly}>Undo edit</span>
-					<span aria-hidden>&lt;-</span>
+					<span aria-hidden>
+						<Undo />
+					</span>
 				</MenubarButton>
 				<MenubarButton
 					onPress={() => {
@@ -262,7 +295,9 @@ const Menubar = () => {
 					disabled={!editor.can().chain().focus().redo().run()}
 				>
 					<span css={srOnly}>Redo edit</span>
-					<span aria-hidden>-&gt;</span>
+					<span aria-hidden>
+						<Redo />
+					</span>
 				</MenubarButton>
 			</Group>
 		</Toolbar>
