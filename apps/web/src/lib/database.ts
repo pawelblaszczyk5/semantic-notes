@@ -3,6 +3,8 @@ import { Model, SqlSchema } from "@effect/sql";
 import { PgClient, PgMigrator } from "@effect/sql-pg";
 import { Effect, Layer, Redacted, Schema, String } from "effect";
 
+import { generateEmbeddings } from "./embeddings";
+import { splitDocument } from "./html";
 import { allMigrations } from "./migrations/entry";
 
 export class Note extends Model.Class<Note>("Note")({
@@ -85,6 +87,41 @@ export const findAllNotes = SqlSchema.findAll({
 	},
 	Request: Schema.Null,
 	Result: Note,
+});
+
+export const createEmbeddings = SqlSchema.void({
+	execute: (request) => {
+		return Effect.gen(function* () {
+			const sql = yield* PgClient.PgClient;
+
+			const chunks = yield* Effect.tryPromise(async () => {
+				return splitDocument(request.content);
+			});
+
+			const embeddings = yield* Effect.tryPromise(async () => {
+				return generateEmbeddings(chunks);
+			});
+
+			yield* sql`
+				DELETE FROM ${sql("embedding")}
+				WHERE
+					${sql("noteId")} = ${request.id}
+			`;
+
+			const dataToInsert = embeddings.map((embedding) => {
+				return {
+					embedding: `[${embedding.join(",")}]`,
+					noteId: request.id,
+				};
+			});
+
+			return yield* sql`
+				INSERT INTO
+					${sql("embedding")} ${sql.insert(dataToInsert)}
+			`;
+		});
+	},
+	Request: Note,
 });
 
 const PgLive = PgClient.layer({

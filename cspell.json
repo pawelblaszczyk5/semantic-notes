@@ -4,7 +4,7 @@
 	"ignorePaths": ["pnpm-lock.yaml", "**.svg", ".git/", ".gitignore", ".vscode/", "./patches/", "cspell.json"],
 	"dictionaries": ["lorem-ipsum"],
 	"useGitignore": true,
-	"words": ["codeowner", "commonality", "pawelblaszczyk", "pgvector", "stylesheet", "turbopack", "typecheck"],
+	"words": ["codeowner", "commonality", "ollama", "pawelblaszczyk", "pgvector", "stylesheet", "turbopack", "typecheck"],
 	"enableGlobDot": true,
 	"enableFiletypes": ["dockercompose", "dockerfile", "github-actions-workflow"],
 	"ignoreWords": [

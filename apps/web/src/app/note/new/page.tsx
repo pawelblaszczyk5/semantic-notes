@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { connection } from "next/server";
 
 import { Editor } from "../../../components/editor";
-import { insertNote } from "../../../lib/database";
+import { createEmbeddings, insertNote, Note } from "../../../lib/database";
 import { runtime } from "../../../lib/effect";
 
 const NewNotePage = async () => {
@@ -14,6 +14,8 @@ const NewNotePage = async () => {
 				"use server";
 
 				const { id } = await runtime.runPromise(insertNote({ content }));
+
+				await runtime.runPromise(createEmbeddings(Note.make({ content, id })));
 
 				redirect(`/note/${id.toString()}`);
 			}}
