@@ -1,7 +1,9 @@
 "use client";
 
+import type { CharacterCountStorage } from "@tiptap/extension-character-count";
 import type { ReactNode } from "react";
 
+import CharacterCount from "@tiptap/extension-character-count";
 import UnderlineExtension from "@tiptap/extension-underline";
 import { EditorProvider, useCurrentEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
@@ -37,6 +39,7 @@ const extensions = [
 		},
 	}),
 	UnderlineExtension,
+	CharacterCount,
 ];
 
 const MenubarButton = ({
@@ -304,6 +307,31 @@ const Menubar = () => {
 	);
 };
 
+const Counter = () => {
+	// eslint-disable-next-line react-compiler/react-compiler --- that seems to be false positive
+	"use no memo";
+
+	const { editor } = useCurrentEditor();
+
+	if (!editor) {
+		throw new Error("Menubar must be rendered under the editor context");
+	}
+
+	const storage = editor.storage["characterCount"] as CharacterCountStorage;
+
+	return (
+		<p
+			css={{
+				fontSize: 15,
+				fontWeight: 300,
+			}}
+		>
+			Characters: <span css={{ color: theme.color.grass[12] }}>{storage.characters()}</span> Words:{" "}
+			<span css={{ color: theme.color.grass[12] }}>{storage.words()}</span>
+		</p>
+	);
+};
+
 export const InternalEditor = () => {
 	const [className, Styles] = css({
 		"& .tiptap": {
@@ -311,7 +339,7 @@ export const InternalEditor = () => {
 			borderRadius: 8,
 			borderStyle: "solid",
 			borderWidth: 2,
-			marginBlockStart: 12,
+			marginBlock: 12,
 			padding: 12,
 			...insideFocusRing,
 		},
@@ -362,6 +390,7 @@ export const InternalEditor = () => {
 				}}
 				extensions={extensions}
 				immediatelyRender={false}
+				slotAfter={<Counter />}
 				slotBefore={<Menubar />}
 			/>
 			<Styles />
