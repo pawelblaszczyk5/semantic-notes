@@ -46,7 +46,7 @@ patchedDependencies:
     hash: pvpxqvsvkxl5dehswcxp4p343u
     path: patches/next.patch
   restyle:
-    hash: k4bh3fwbte5qyhb32negvtjcfq
+    hash: ptxknwqskqmrezfqs56eawc5uy
     path: patches/restyle.patch
 
 importers:
@@ -115,7 +115,7 @@ importers:
         version: 0.0.0-experimental-603e6108-20241029(react@0.0.0-experimental-603e6108-20241029)
       restyle:
         specifier: ^2.4.0
-        version: 2.4.0(patch_hash=k4bh3fwbte5qyhb32negvtjcfq)(react@0.0.0-experimental-603e6108-20241029)
+        version: 2.4.0(patch_hash=ptxknwqskqmrezfqs56eawc5uy)(react@0.0.0-experimental-603e6108-20241029)
     devDependencies:
       '@semantic-notes/eslint-config':
         specifier: workspace:0.0.1
@@ -10332,7 +10332,7 @@ snapshots:
       onetime: 5.1.2
       signal-exit: 3.0.7
 
-  restyle@2.4.0(patch_hash=k4bh3fwbte5qyhb32negvtjcfq)(react@0.0.0-experimental-603e6108-20241029):
+  restyle@2.4.0(patch_hash=ptxknwqskqmrezfqs56eawc5uy)(react@0.0.0-experimental-603e6108-20241029):
     dependencies:
       react: 0.0.0-experimental-603e6108-20241029
 
