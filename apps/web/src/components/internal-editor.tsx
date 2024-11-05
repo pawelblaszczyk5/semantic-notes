@@ -345,6 +345,15 @@ export const InternalEditor = () => {
 			padding: 12,
 			...insideFocusRing,
 		},
+		"& :is(ul,ol,p)": {
+			":first-child": {
+				marginBlockStart: 0,
+			},
+			":last-child": {
+				marginBlockEnd: 0,
+			},
+			marginBlock: 8,
+		},
 		"& h1": {
 			":first-child": {
 				marginBlockStart: 0,
@@ -369,15 +378,6 @@ export const InternalEditor = () => {
 		},
 		"& ol": {
 			listStyleType: "decimal",
-		},
-		"& p": {
-			":first-child": {
-				marginBlockStart: 0,
-			},
-			":last-child": {
-				marginBlockEnd: 0,
-			},
-			marginBlock: 8,
 		},
 		"& ul": {
 			listStyleType: "disc",
