@@ -4,10 +4,10 @@ packages:
   - tooling/*
 
 catalog:
-  "@types/node": ^22.8.7
+  "@types/node": ^22.9.0
   commonality: ^0.2.63
   commonality-checks-recommended: ^0.0.40
-  next: 15.0.3-canary.5
+  next: 15.0.3-canary.6
   react: 0.0.0-experimental-603e6108-20241029
   react-dom: 0.0.0-experimental-603e6108-20241029
   "@types/react": npm:types-react@19.0.0-rc.1

@@ -41,7 +41,7 @@ const MainLayout = ({
 					padding: 16,
 				}}
 			>
-				<Suspense fallback={null}>{children}</Suspense>
+				<Suspense>{children}</Suspense>
 			</body>
 		</html>
 	);

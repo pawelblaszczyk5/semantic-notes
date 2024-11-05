@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { connection } from "next/server";
 
 import { findAllNotes } from "../lib/database";
@@ -17,9 +18,9 @@ const HomePage = async () => {
 		>
 			{notes.map((note) => {
 				return (
-					<a href={`/note/${note.id.toString()}`} key={note.id}>
+					<Link href={`/note/${note.id.toString()}`} key={note.id} prefetch>
 						{note.content.slice(0, 10)}
-					</a>
+					</Link>
 				);
 			})}
 		</div>

@@ -1,4 +1,5 @@
 import { Effect, Option } from "effect";
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { connection } from "next/server";
 
@@ -27,6 +28,7 @@ const ExistingNotePage = async ({ params }: Readonly<{ params: Promise<{ id: str
 			saveChangesAction={async (content) => {
 				"use server";
 
+				revalidatePath(`/note/${noteId}`);
 				await runtime.runPromise(updateNote({ content, id: Number(noteId) }));
 			}}
 			content={note.content}
