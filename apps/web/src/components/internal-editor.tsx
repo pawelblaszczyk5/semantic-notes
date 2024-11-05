@@ -42,7 +42,7 @@ const extensions = [
 	CharacterCount,
 ];
 
-const MenubarButton = ({
+const CommandButton = ({
 	children,
 	disabled,
 	onPress,
@@ -73,7 +73,7 @@ const MenubarButton = ({
 	);
 };
 
-const MenubarToggleButton = ({
+const CommandToggleButton = ({
 	children,
 	disabled,
 	isSelected,
@@ -117,14 +117,14 @@ const MenubarToggleButton = ({
 	);
 };
 
-const Menubar = () => {
+const TopBar = () => {
 	// eslint-disable-next-line react-compiler/react-compiler --- that seems to be false positive
 	"use no memo";
 
 	const { editor } = useCurrentEditor();
 
 	if (!editor) {
-		throw new Error("Menubar must be rendered under the editor context");
+		throw new Error("TopBar must be rendered under the editor context");
 	}
 
 	return (
@@ -142,7 +142,7 @@ const Menubar = () => {
 				}}
 				aria-label="Style"
 			>
-				<MenubarToggleButton
+				<CommandToggleButton
 					onChange={() => {
 						editor.chain().focus().toggleBold().run();
 					}}
@@ -153,8 +153,8 @@ const Menubar = () => {
 					<span aria-hidden>
 						<Bold />
 					</span>
-				</MenubarToggleButton>
-				<MenubarToggleButton
+				</CommandToggleButton>
+				<CommandToggleButton
 					onChange={() => {
 						editor.chain().focus().toggleItalic().run();
 					}}
@@ -165,8 +165,8 @@ const Menubar = () => {
 					<span aria-hidden>
 						<Italic />
 					</span>
-				</MenubarToggleButton>
-				<MenubarToggleButton
+				</CommandToggleButton>
+				<CommandToggleButton
 					onChange={() => {
 						editor.chain().focus().toggleStrike().run();
 					}}
@@ -177,8 +177,8 @@ const Menubar = () => {
 					<span aria-hidden>
 						<Strike />
 					</span>
-				</MenubarToggleButton>
-				<MenubarToggleButton
+				</CommandToggleButton>
+				<CommandToggleButton
 					onChange={() => {
 						editor.chain().focus().toggleUnderline().run();
 					}}
@@ -189,7 +189,7 @@ const Menubar = () => {
 					<span aria-hidden>
 						<Underline />
 					</span>
-				</MenubarToggleButton>
+				</CommandToggleButton>
 			</Group>
 			<Separator
 				css={{
@@ -207,7 +207,7 @@ const Menubar = () => {
 				}}
 				aria-label="Elements"
 			>
-				<MenubarToggleButton
+				<CommandToggleButton
 					onChange={() => {
 						editor.chain().focus().toggleHeading({ level: 1 }).run();
 					}}
@@ -218,8 +218,8 @@ const Menubar = () => {
 					<span aria-hidden>
 						<Heading />
 					</span>
-				</MenubarToggleButton>
-				<MenubarToggleButton
+				</CommandToggleButton>
+				<CommandToggleButton
 					onChange={() => {
 						editor.chain().focus().toggleOrderedList().run();
 					}}
@@ -230,8 +230,8 @@ const Menubar = () => {
 					<span aria-hidden>
 						<UnorderedList />
 					</span>
-				</MenubarToggleButton>
-				<MenubarToggleButton
+				</CommandToggleButton>
+				<CommandToggleButton
 					onChange={() => {
 						editor.chain().focus().toggleBulletList().run();
 					}}
@@ -242,8 +242,8 @@ const Menubar = () => {
 					<span aria-hidden>
 						<OrderedList />
 					</span>
-				</MenubarToggleButton>
-				<MenubarButton
+				</CommandToggleButton>
+				<CommandButton
 					onPress={() => {
 						editor.chain().focus().setHorizontalRule().run();
 					}}
@@ -253,8 +253,8 @@ const Menubar = () => {
 					<span aria-hidden>
 						<HorizontalLine />
 					</span>
-				</MenubarButton>
-				<MenubarButton
+				</CommandButton>
+				<CommandButton
 					onPress={() => {
 						editor.chain().focus().clearNodes().unsetAllMarks().run();
 					}}
@@ -264,7 +264,7 @@ const Menubar = () => {
 					<span aria-hidden>
 						<Clear />
 					</span>
-				</MenubarButton>
+				</CommandButton>
 			</Group>
 			<Separator
 				css={{
@@ -282,7 +282,7 @@ const Menubar = () => {
 				}}
 				aria-label="History"
 			>
-				<MenubarButton
+				<CommandButton
 					onPress={() => {
 						editor.chain().focus().undo().run();
 					}}
@@ -292,8 +292,8 @@ const Menubar = () => {
 					<span aria-hidden>
 						<Undo />
 					</span>
-				</MenubarButton>
-				<MenubarButton
+				</CommandButton>
+				<CommandButton
 					onPress={() => {
 						editor.chain().focus().redo().run();
 					}}
@@ -303,20 +303,20 @@ const Menubar = () => {
 					<span aria-hidden>
 						<Redo />
 					</span>
-				</MenubarButton>
+				</CommandButton>
 			</Group>
 		</Toolbar>
 	);
 };
 
-const Counter = () => {
+const BottomBar = () => {
 	// eslint-disable-next-line react-compiler/react-compiler --- that seems to be false positive
 	"use no memo";
 
 	const { editor } = useCurrentEditor();
 
 	if (!editor) {
-		throw new Error("Menubar must be rendered under the editor context");
+		throw new Error("BottomBar must be rendered under the editor context");
 	}
 
 	const storage = editor.storage["characterCount"] as CharacterCountStorage;
@@ -392,8 +392,8 @@ export const InternalEditor = () => {
 				}}
 				extensions={extensions}
 				immediatelyRender={false}
-				slotAfter={<Counter />}
-				slotBefore={<Menubar />}
+				slotAfter={<BottomBar />}
+				slotBefore={<TopBar />}
 			/>
 			<Styles />
 		</>
