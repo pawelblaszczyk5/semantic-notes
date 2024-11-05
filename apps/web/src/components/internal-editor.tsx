@@ -308,15 +308,23 @@ export const InternalEditor = () => {
 	const [className, Styles] = css({
 		"& .tiptap": {
 			borderColor: theme.color.olive[8],
-			borderRadius: 4,
+			borderRadius: 8,
 			borderStyle: "solid",
 			borderWidth: 2,
 			marginBlockStart: 12,
+			padding: 12,
 			...insideFocusRing,
 		},
 		"& h1": {
+			":first-child": {
+				marginBlockStart: 0,
+			},
+			":last-child": {
+				marginBlockEnd: 0,
+			},
 			fontSize: 24,
 			fontWeight: 500,
+			marginBlock: 12,
 		},
 		"& hr": {
 			borderColor: theme.color.olive[6],
@@ -327,16 +335,19 @@ export const InternalEditor = () => {
 			width: "95%",
 		},
 		"& li": {
-			marginInlineStart: 26,
-		},
-		"& li > p": {
-			paddingInlineStart: 0,
+			marginInlineStart: 16,
 		},
 		"& ol": {
 			listStyleType: "decimal",
 		},
-		"& p, h1": {
-			padding: 8,
+		"& p": {
+			":first-child": {
+				marginBlockStart: 0,
+			},
+			":last-child": {
+				marginBlockEnd: 0,
+			},
+			marginBlock: 8,
 		},
 		"& ul": {
 			listStyleType: "disc",
