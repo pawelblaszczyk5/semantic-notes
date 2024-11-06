@@ -67,10 +67,10 @@
 		},
 		"patchedDependencies": {
 			"@commonalityco/studio": "patches/@commonalityco__studio.patch",
+			"@effect/sql-pg": "patches/@effect__sql-pg.patch",
 			"eslint-plugin-import-x": "patches/eslint-plugin-import-x.patch",
 			"next@15.0.3-canary.6": "patches/next.patch",
-			"restyle": "patches/restyle.patch",
-			"@effect/sql-pg": "patches/@effect__sql-pg.patch"
+			"restyle": "patches/restyle.patch"
 		}
 	}
 }

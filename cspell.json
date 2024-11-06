@@ -13,10 +13,12 @@
 		"gapcursor",
 		"isbot",
 		"jsxdev",
+		"langchain",
 		"nuqs",
 		"pipeable",
 		"replicache",
 		"taze",
+		"textsplitters",
 		"tiptap",
 		"tseslint",
 		"xyflow"

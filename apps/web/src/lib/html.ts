@@ -1,7 +1,6 @@
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 import * as cheerio from "cheerio";
 
-
 export const getTitle = (html: string) => {
 	const $ = cheerio.load(html, {});
 
@@ -11,7 +10,7 @@ export const getTitle = (html: string) => {
 export const getMainContent = (html: string) => {
 	const $ = cheerio.load(html, {});
 
-	$("h1").remove();	
+	$("h1").remove();
 
 	return $.text();
 };
