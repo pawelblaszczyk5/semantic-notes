@@ -1,16 +1,19 @@
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 import * as cheerio from "cheerio";
 
-import { invariant } from "@semantic-notes/invariant";
 
 export const getTitle = (html: string) => {
 	const $ = cheerio.load(html, {});
 
-	const maybeTitle = $("body :first-child").prop("innerText");
+	return $("h1").text();
+};
 
-	invariant(maybeTitle);
+export const getMainContent = (html: string) => {
+	const $ = cheerio.load(html, {});
 
-	return maybeTitle;
+	$("h1").remove();	
+
+	return $.text();
 };
 
 const splitter = RecursiveCharacterTextSplitter.fromLanguage("html", { chunkOverlap: 20, chunkSize: 100 });
