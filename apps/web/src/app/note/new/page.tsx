@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { connection } from "next/server";
 
@@ -17,6 +18,7 @@ const NewNotePage = async () => {
 
 				await runtime.runPromise(createEmbeddings(Note.make({ content, id })));
 
+				revalidatePath(`/`);
 				redirect(`/note/${id.toString()}`);
 			}}
 		/>

@@ -29,6 +29,7 @@ const ExistingNotePage = async ({ params }: Readonly<{ params: Promise<{ id: str
 				"use server";
 
 				revalidatePath(`/note/${noteId}`);
+				revalidatePath(`/`);
 				await runtime.runPromise(updateNote({ content, id: Number(noteId) }));
 				await runtime.runPromise(createEmbeddings(Note.make({ content, id: Number(noteId) })));
 			}}
