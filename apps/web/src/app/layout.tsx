@@ -12,12 +12,6 @@ const geistSans = localFont({
 	weight: "100 900",
 });
 
-const geistMono = localFont({
-	src: "../fonts/GeistMonoVF.woff",
-	variable: "--font-geist-mono",
-	weight: "100 900",
-});
-
 export const metadata = {
 	description: "Simple app to make notes and semantically search them",
 	title: "Semantic Notes",
@@ -29,7 +23,7 @@ const MainLayout = ({
 	children: ReactNode;
 }>) => {
 	return (
-		<html className={`${geistSans.variable} ${geistMono.variable}`} lang="en">
+		<html className={geistSans.variable} lang="en">
 			<head>
 				<Reset />
 				<Theme />
