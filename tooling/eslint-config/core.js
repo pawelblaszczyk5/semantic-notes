@@ -3,7 +3,7 @@ import tseslint from "typescript-eslint";
 import canonical from "eslint-plugin-canonical";
 import eslintComments from "eslint-plugin-eslint-comments";
 import preferArrowFunctions from "eslint-plugin-prefer-arrow-functions";
-import { fixupPluginRules, fixupConfigRules } from "@eslint/compat";
+import { fixupPluginRules } from "@eslint/compat";
 import fp from "eslint-plugin-fp";
 import importX from "eslint-plugin-import-x";
 import gitignore from "eslint-config-flat-gitignore";
