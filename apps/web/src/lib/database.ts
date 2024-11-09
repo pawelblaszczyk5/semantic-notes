@@ -120,6 +120,8 @@ export const findAllNotes = SqlSchema.findAll({
 				FROM
 					${sql("closestEmbeddings")}
 					JOIN ${sql("note")} ON ${sql("note")}.${sql("id")} = ${sql("closestEmbeddings")}.${sql("noteId")}
+				WHERE
+					${sql("closestEmbeddings")}.${sql("minDistance")} < 1
 				ORDER BY
 					${sql("distance")} ASC;
 			`;

@@ -1,6 +1,7 @@
 import ollama from "ollama";
 
-const MODEL = "gemma2";
+// cspell:ignore mxbai
+const MODEL = "mxbai-embed-large";
 
 export const generateEmbeddings = async (chunks: Array<string>) => {
 	const result = await ollama.embed({
